@@ -20,36 +20,40 @@
 
   <body>
     <form action=""></form>
-      <section>
-        <h2>Personal details</h2>
-        <p>
-          <label for="name">
-            <span>Name:</span>
-          </label>
-          <input type="text" id="name" name="name">
-        </p>
-        <p>
-          <label for="age">
-            <span>Age:</span>
-          </label>
-          <input type="number" id="age" name="age">
-        </p>
-      </section>
-      <section>
-        <h2>Comment information</h2>
-        <p>
-          <label for="comment">
-            <span>Comment:</span>
-          </label>
-          <input type="text" id="comment" name="comment">
-        </p>
-        <p>
-          <label for="email">
-            <span>Email:</span>
-          </label>
-          <input type="email" id="email" name="email">
-        </p>
-      </section>
+      <fieldset>
+        <legend>Personal details</legend>
+        <ul>
+          <li>
+            <label for="name">
+              <span>Name:</span>
+            </label>
+            <input type="text" id="name" name="name">
+          </li>
+          <li>
+            <label for="age">
+              <span>Age:</span>
+            </label>
+            <input type="number" id="age" name="age">
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>Comment information</legend>
+          <ul>
+            <li>
+              <label for="comment">
+                <span>Comment:</span>
+              </label>
+              <input type="text" id="comment" name="comment">
+            </li>
+            <li>
+              <label for="email">
+                <span>Email:</span>
+              </label>
+              <input type="email" id="email" name="email">
+            </li>
+          </ul>
+      </fieldset>
     </form>
   </body>
 

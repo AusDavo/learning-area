@@ -19,10 +19,44 @@
       button,
       input,
       select {
+        appearance: none;
         font-family: inherit;
         font-size: 100%;
         padding: 0; margin: 0;
       }
+      
+      input[type="search"] {
+        line-height: 1.5em;
+        padding-left: 5px;
+        border: 2px solid #ccc;
+        width: 200px;
+
+        -webkit-appearance: none;
+
+        border-radius: 6px;
+        outline: transparent;
+        
+        
+        
+      }
+
+      input[type="search"]:focus, input[type="search"]:hover {
+        border: 2px solid red;
+        box-shadow: 1px 1px 1px gray;
+      }
+
+      div {
+        width: 36px;
+        height: 24px;
+        background: url(search-24px.png) no-repeat center;
+        background-size: 18px;
+      }
+
+      form {
+        display: flex;
+        align-items: center;
+      }
+
     </style>
   </head>
 

@@ -15,6 +15,20 @@
       * {
         box-sizing: border-box;
       }
+
+      input:invalid {
+        border: 1px solid palevioletred;
+      }
+
+      input[required]:valid + span:after {
+        color: lightgrey;
+        content: "required";
+      }
+
+      input[required]:invalid + span:after {
+        color: red;
+        content: "required";
+      }
     </style>
   </head>
 
@@ -24,19 +38,22 @@
       <ul>
         <li>
           <label for="uname">User name:</label>
-          <input type="text" name="uname" id="uname">
+          <input type="text" name="uname" id="uname" required minlength="5" maxlength="20" pattern="[a-z]\.[a-z0-9]{3,}" value="E.g., a.boris42">
+          <span></span>
         </li>
         <li>
           <label for="email">Email address:</label>
-          <input type="text" name="email" id="email">
+          <input type="email" name="email" id="email" required pattern="[a-zA-Z0-9]+@bigcorp.eu" value="E.g., boris42@bigcorp.eu">
+          <span></span>
         </li>
         <li>
           <label for="phone">Phone number:</label>
-          <input type="text" name="phone" id="phone">
+          <input type="tel" name="phone" id="phone" required maxlength="15">
+          <span></span>
         </li>
         <li>
           <label for="comment">Comment:</label>
-          <textarea name="comment" id="comment">
+          <textarea name="comment" id="comment" required maxlength="200">
           </textarea>
         </li>
         <li>

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Form validation: Task 2</title>
+    <title>Form validation: Task 1</title>
     <style>
       body {
         background-color: #fff;
@@ -15,6 +15,20 @@
       * {
         box-sizing: border-box;
       }
+
+      input:invalid {
+        border: 1px solid palevioletred;
+      }
+
+      input[required]:valid + span:after {
+        color: lightgrey;
+        content: "required";
+      }
+
+      input[required]:invalid + span:after {
+        color: red;
+        content: "required";
+      }
     </style>
   </head>
 
@@ -24,19 +38,22 @@
       <ul>
         <li>
           <label for="uname">User name:</label>
-          <input type="text" name="uname" id="uname" required>
+          <input type="text" name="uname" id="uname" required minlength="5" maxlength="20" pattern="[a-z]\.[a-z0-9]{3,}" value="E.g., a.boris42">
+          <span></span>
         </li>
         <li>
           <label for="email">Email address:</label>
-          <input type="text" name="email" id="email" required>
+          <input type="email" name="email" id="email" required pattern="[a-zA-Z0-9]+@bigcorp.eu" value="E.g., boris42@bigcorp.eu">
+          <span></span>
         </li>
         <li>
           <label for="phone">Phone number:</label>
-          <input type="text" name="phone" id="phone" required>
+          <input type="tel" name="phone" id="phone" required pattern="\d{3}[- .]?\d{3}[- .]?\d{4}">
+          <span></span>
         </li>
         <li>
           <label for="comment">Comment:</label>
-          <textarea name="comment" id="comment" required>
+          <textarea name="comment" id="comment" required maxlength="200">
           </textarea>
         </li>
         <li>

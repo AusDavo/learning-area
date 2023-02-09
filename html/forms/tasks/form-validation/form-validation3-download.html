@@ -21,12 +21,37 @@
   <body>
     <form>
       <label for="mail">I would like you to provide me with an e-mail address:</label>
-      <input type="email" id="mail" name="mail">
+      <input type="email" id="mail" name="mail" required minlength="10">
       <button>Submit</button>
+      <span id="email-error"></span>
     </form>
   </body>
   <script>
-    const email = document.getElementById("mail");
+
+    const emailInput = document.getElementById("mail");
+    const emailError = document.getElementById("email-error");
+    const minEmailLength = 10;
+
+    emailInput.addEventListener("input", function () {
+      const emailValue = emailInput.value;
+
+      const isValidEmail = function () {
+        const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+        return emailRegex.test(emailValue);
+      };
+
+      if (emailValue.length >= minEmailLength && isValidEmail()) {
+        emailInput.style.borderColor = "green";
+        emailError.style.display = "none";
+      } else {
+        emailInput.style.borderColor = "red";
+        emailError.style.display = "block";
+
+        emailError.textContent = emailValue.length < minEmailLength
+          ? "Email must be at least " + minEmailLength + " characters long."
+          : "Invalid email address.";
+      }
+    });
 
 
   </script>
